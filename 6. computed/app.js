@@ -10,10 +10,10 @@ const app = Vue.createApp({
   },
   computed: {
     fullname() {
-      if (this.name === '') {
+      if (this.name === '' || this.lastName === '') {
         return '';
       }
-      return this.name + " " + "Newbie";
+      return this.name + " " + this.lastName;
     }
   },
   methods: {
@@ -33,6 +33,7 @@ const app = Vue.createApp({
     },
     resetInput() {
       this.name = '';
+      this.lastName = '';
     },
     // outputFullname() {
     //   if (this.name === '') {
