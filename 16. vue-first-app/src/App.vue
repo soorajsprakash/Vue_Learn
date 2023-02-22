@@ -5,20 +5,22 @@
         </header>
         <ul>
             <friend-contact 
-                name="Manuel Lorenz"
-                phone-number="5411321336"
-                email-address="manuel@gmail.com"
+                name="Manuel Lorenz" 
+                phone-number="5411321336" 
+                email-address="manuel@gmail.com" 
+                is-favorite="1"
             ></friend-contact>
-            <friend-contact
-                name="Julie Jones"
-                phone-number="91546546510"
-                email-address="julie@gmail.com"
+            <friend-contact 
+                name="Julie Jones" 
+                phone-number="91546546510" 
+                email-address="julie@gmail.com" 
+                is-favorite="0"
             ></friend-contact>
         </ul>
     </section>
 </template>
 
-    
+
 
 <script>
 export default {
