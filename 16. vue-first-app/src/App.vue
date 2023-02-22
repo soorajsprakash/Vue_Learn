@@ -5,15 +5,12 @@
         </header>
         <ul>
             <friend-contact 
-                name="Manuel Lorenz" 
-                phone-number="5411321336" 
-                email-address="manuel@gmail.com" 
-                is-favorite="1"
-            ></friend-contact>
-            <friend-contact 
-                name="Julie Jones" 
-                phone-number="91546546510" 
-                email-address="julie@gmail.com" 
+                v-for="friend in friends"
+                :key="friend.id"
+                :name="friend.name"
+                :phone-number="friend.phone"
+                :email-address="friend.email"
+                :is-favorite="friend.isFavorite"
             ></friend-contact>
         </ul>
     </section>
@@ -25,20 +22,21 @@
 export default {
     data() {
         return {
-            // friends: [
-            //     {
-            //         id: 'manuel',
-            //         name: 'Manuel Lorenz',
-            //         phone: '5411321336',
-            //         email: 'manuel@gmail.com'
-            //     },
-            //     {
-            //         id: 'julie',
-            //         name: 'Julie Jones',
-            //         phone: '91546546510',
-            //         email: 'julie@gmail.com'
-            //     },
-            // ]
+            friends: [
+                {
+                    id: 'manuel',
+                    name: 'Manuel Lorenz',
+                    phone: '5411321336',
+                    email: 'manuel@gmail.com',
+                    isFavorite: true
+                },
+                {
+                    id: 'julie',
+                    name: 'Julie Jones',
+                    phone: '91546546510',
+                    email: 'julie@gmail.com'
+                },
+            ]
         };
     },
 };
