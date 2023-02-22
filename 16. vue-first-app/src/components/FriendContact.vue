@@ -39,6 +39,19 @@ export default {
             default: false,
         }
     },
+    // "emits" define the custom events the component is going to emit
+    // emits: ['toggle-favorite'],
+    emits: {
+        'toggle-favorite': function (id) {
+            // or we can specify a fn(id) with nothing in fn body
+            if (id) {
+                return true;
+            } else {
+                console.warn("ID is missing");
+                return false;
+            }
+        }
+    },
     data() {
         return {
             detailsVisible: false,
