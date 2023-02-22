@@ -1,6 +1,6 @@
 <template>
     <li>
-        <h2>{{ name }} {{ friendisFav ? '(Fav)' : '' }}</h2>
+        <h2>{{ name }} {{ isFavorite ? '(Fav)' : '' }}</h2>
         <button @click="toggleDetails">{{ detailsVisible ? 'Hide' : 'Show' }} Details</button>
         <br>
         <button @click="toggleFavorite">Toggle Favorite</button>
@@ -17,6 +17,10 @@
 export default {
     // prop validation is ismilar to mongoose schema validation
     props: {
+        id: {
+            type: String,
+            required: true
+        },
         name: {
             type: String,
             required: true
@@ -38,7 +42,6 @@ export default {
     data() {
         return {
             detailsVisible: false,
-            friendisFav: this.isFavorite
         };
     },
     methods: {
@@ -46,7 +49,9 @@ export default {
             this.detailsVisible = !this.detailsVisible;
         },
         toggleFavorite() {
-            this.friendisFav = !this.friendisFav;
+            // 1st arg to the emit fn is the custom name of the fn,
+            // and the subsequent args are the data we pass to the parent
+            this.$emit('toggle-favorite', this.id);
         }
     }
 };
