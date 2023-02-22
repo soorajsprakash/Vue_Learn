@@ -8,6 +8,7 @@
             <li><strong>Phone: </strong>{{ phoneNumber }}</li>
             <li><strong>Email: </strong>{{ emailAddress }}</li>
         </ul>
+        <button @click="$emit('delete-friend', id); ">Delete</button>
     </li>
 </template>
 
@@ -43,13 +44,15 @@ export default {
     // emits: ['toggle-favorite'],
     emits: {
         'toggle-favorite': function (id) {
-            // or we can specify a fn(id) with nothing in fn body
             if (id) {
                 return true;
             } else {
                 console.warn("ID is missing");
                 return false;
             }
+        },
+        'delete-friend': function(id) {
+            return (id) ? true :  false
         }
     },
     data() {
@@ -65,7 +68,10 @@ export default {
             // 1st arg to the emit fn is the custom name of the fn,
             // and the subsequent args are the data we pass to the parent
             this.$emit('toggle-favorite', this.id);
-        }
+        },
+        // deleteFriend() {
+        //     this.$emit('delete-friend', this.id);
+        // }
     }
 };
 </script>
