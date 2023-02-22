@@ -14,7 +14,6 @@
                 name="Julie Jones" 
                 phone-number="91546546510" 
                 email-address="julie@gmail.com" 
-                is-favorite="0"
             ></friend-contact>
         </ul>
     </section>
@@ -26,20 +25,20 @@
 export default {
     data() {
         return {
-            friends: [
-                {
-                    id: 'manuel',
-                    name: 'Manuel Lorenz',
-                    phone: '5411321336',
-                    email: 'manuel@gmail.com'
-                },
-                {
-                    id: 'julie',
-                    name: 'Julie Jones',
-                    phone: '91546546510',
-                    email: 'julie@gmail.com'
-                },
-            ]
+            // friends: [
+            //     {
+            //         id: 'manuel',
+            //         name: 'Manuel Lorenz',
+            //         phone: '5411321336',
+            //         email: 'manuel@gmail.com'
+            //     },
+            //     {
+            //         id: 'julie',
+            //         name: 'Julie Jones',
+            //         phone: '91546546510',
+            //         email: 'julie@gmail.com'
+            //     },
+            // ]
         };
     },
 };
