@@ -48,7 +48,10 @@
       </div>
     </div>
     <div class="form-control">
-      <RatingControl></RatingControl>
+      <RatingControl 
+      v-model="rating">
+      <!--or we can use :model-value="" @update:model-value="" -->
+      </RatingControl>
     </div>
     <div class="form-control">
       <input type="checkbox" name="confirm-terms" id="confirm-terms" v-model="confirm">
@@ -75,6 +78,7 @@ export default {
       referrer: 'wom',
       interest: [],
       how: null,
+      rating: null,
       confirm: false,
       nameValidity: 'pending'
     }
@@ -83,6 +87,9 @@ export default {
     submitForm() {
       console.log('name: ' + this.name)
       this.name = ''
+      console.log("rating: ")
+      console.log(this.rating)
+      this.rating = null
     },
     validateInput() {
       if (this.name === '') {
