@@ -6,7 +6,7 @@
         <base-button @click="loadExperiences">Load Submitted Experiences</base-button>
       </div>
       <p v-if="isLoading">Loading...</p>
-      <p v-else-if="!isLoading && error">
+      <p class="error-msg" v-else-if="!isLoading && error">
         {{ error }}
       </p>
       <p v-else-if="!isLoading && (!results || results.length === 0)">No stored exp found.</p>
@@ -78,5 +78,10 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+p.error-msg {
+  color: red;
+  background-color: antiquewhite;
 }
 </style>
