@@ -41,7 +41,6 @@ const router = createRouter({
             components: {
                 default: UsersList,
                 footer: UsersFooter
-
             },
         },
         {
@@ -51,9 +50,9 @@ const router = createRouter({
     ],
     linkActiveClass: 'active',
     scrollBehavior(to, from, savedPosition) {
-        console.log("TO:  \n", to)
-        console.log("from:  \n", from)
-        console.log("savedPOS:  \n", savedPosition)
+        // console.log("TO:  \n", to)
+        // console.log("from:  \n", from)
+        // console.log("savedPOS:  \n", savedPosition)
 
         if (savedPosition) {
             // page returns to the last clicked position while going back
@@ -62,6 +61,22 @@ const router = createRouter({
         // page loads on the top
         return { top: 0, left: 0 }
     }
+})
+
+
+router.beforeEach(function(to, from, next) {
+    console.log('GLOBAL beforeEach')
+    console.log(to, from)
+    
+    // here we can go to any team members page, but if we wanna go somewhere else,
+    // we'll be redirected to the t2 team-member page.
+    // if (to.name === 'team-members') {
+    //     next() // similar to express middlewares
+    // } else {
+    //     next({ name: 'team-members', params: { teamId: 't2' } })
+    // }
+    
+    next()
 })
 
 const app = createApp(App)
