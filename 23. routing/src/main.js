@@ -85,6 +85,13 @@ router.beforeEach(function(to, from, next) {
     next()
 })
 
+router.afterEach(function(to, from) {
+    // runs once after each loading of the routes
+    // good for logging or sending analytics
+    console.log('GLOBAL afterEach')
+    console.log(to, from)
+})
+
 const app = createApp(App)
 app.use(router);
 
