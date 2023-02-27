@@ -18,6 +18,12 @@ export default {
       // programmatic navigation
       this.$router.push('/teams')
     }
+  },
+  // component level nav guard
+  beforeRouteEnter(to, from, next) {
+    console.log('userlist component level nav guards')
+    console.log(to, from)
+    next()
   }
 };
 </script>

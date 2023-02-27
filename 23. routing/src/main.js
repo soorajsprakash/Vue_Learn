@@ -42,6 +42,12 @@ const router = createRouter({
                 default: UsersList,
                 footer: UsersFooter
             },
+            // navigation guard on single route
+            beforeEnter(to, from, next) {
+                console.log('users before enter')
+                console.log(to, from)
+                next()
+            }
         },
         {
             path: '/:notFound(.*)',
