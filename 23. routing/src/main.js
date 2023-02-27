@@ -50,7 +50,18 @@ const router = createRouter({
         },
     ],
     linkActiveClass: 'active',
-    // linkExactActiveClass: 'custom-exact-active-class-name'
+    scrollBehavior(to, from, savedPosition) {
+        console.log("TO:  \n", to)
+        console.log("from:  \n", from)
+        console.log("savedPOS:  \n", savedPosition)
+
+        if (savedPosition) {
+            // page returns to the last clicked position while going back
+            return savedPosition
+        }
+        // page loads on the top
+        return { top: 0, left: 0 }
+    }
 })
 
 const app = createApp(App)
