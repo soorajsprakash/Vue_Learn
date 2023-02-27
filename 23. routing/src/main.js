@@ -20,6 +20,10 @@ const router = createRouter({
         {
             name: 'teams',
             path: '/teams',
+            // use meta to add/define custom properties
+            meta: {
+                needsAuth: true
+            },
             components: {
                 // key - router name,
                 // value - components to be loaded
@@ -74,6 +78,13 @@ router.beforeEach(function(to, from, next) {
     console.log('GLOBAL beforeEach')
     console.log(to, from)
     
+    if (to.meta.needsAuth) {
+        console.log("Needs authentication")
+        next()
+    } else {
+        next();
+    }
+
     // here we can go to any team members page, but if we wanna go somewhere else,
     // we'll be redirected to the t2 team-member page.
     // if (to.name === 'team-members') {
