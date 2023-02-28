@@ -1,7 +1,14 @@
 <template>
   <div class="container">
-    <div class="block"></div>
-    <button>Animate</button>
+    <div class="block" :class="{animate: animatedBlock}"></div>
+    <button @click="animateBlk">Animate</button>
+  </div>
+  <div class="container">
+
+    <transition>
+      <p v-if="paraIsVisible">This is only sometimes visible..</p>
+    </transition>
+    <button @click="togglePara">Toggle Paragraph</button>
   </div>
   <base-modal @close="hideDialog" v-if="dialogIsVisible">
     <p>This is a test dialog!</p>
@@ -15,7 +22,11 @@
 <script>
 export default {
   data() {
-    return { dialogIsVisible: false };
+    return { 
+      dialogIsVisible: false,
+      animatedBlock: false,
+      paraIsVisible: false,
+    };
   },
   methods: {
     showDialog() {
@@ -24,6 +35,12 @@ export default {
     hideDialog() {
       this.dialogIsVisible = false;
     },
+    animateBlk() {
+      this.animatedBlock = true
+    },
+    togglePara() {
+      this.paraIsVisible = !this.paraIsVisible
+    }
   },
 };
 </script>
@@ -58,6 +75,7 @@ button:active {
   background-color: #290033;
   margin-bottom: 2rem;
 }
+
 .container {
   max-width: 40rem;
   margin: 2rem auto;
@@ -69,4 +87,52 @@ button:active {
   border: 2px solid #ccc;
   border-radius: 12px;
 }
+
+.animate {
+  /* transform: translateX(-150px); */
+  animation: slide-scale 0.3s ease-out forwards;
+}
+
+/* ELEMENT APPEARING ANIMATION CLASS */
+.v-enter-from {
+  opacity: 0;
+  transform: translateY(-30px)
+}
+
+.v-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.v-enter-to {
+  opacity: 1;
+  transform: translateY(0)
+}
+
+/* ELEMENT REMOVING ANIMATION CLASS */
+.v-leave-from {
+  opacity: 1;
+  transform: translateY(0)
+}
+
+.v-leave-active {
+  transition: all 0.3s ease-in;
+}
+
+.v-leave-to {
+  opacity: 0;
+  transform: translateY(30px)
+}
+
+@keyframes slide-scale {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  70% {
+    transform: translateX(-120px) scale(1.1);
+  }
+  100% {
+    transform: translateX(-150px) scale(1);
+  }
+}
+
 </style>
