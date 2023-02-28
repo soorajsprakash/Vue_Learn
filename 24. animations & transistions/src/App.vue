@@ -5,7 +5,7 @@
   </div>
   <div class="container">
 
-    <transition name="para">
+    <transition name="para" @before-enter="beforeEnter" @before-leave="beforeLeave">
       <!-- we can also add custom cls names like below:  -->
       <!-- <transition enter-to-class="some-class"> -->
       <p v-if="paraIsVisible">This is only sometimes visible..</p>
@@ -55,7 +55,15 @@ export default {
     },
     hideUsers() {
       this.usersAreVisible = false
-    }
+    },
+    beforeEnter(el) {
+      console.log(el)
+      console.log("before enter")
+    },
+    beforeLeave(el) {
+      console.log(el)
+      console.log("before leave")
+    },
   },
 };
 </script>
