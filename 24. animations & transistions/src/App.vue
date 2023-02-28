@@ -1,11 +1,15 @@
 <template>
   <div class="container">
+    <UsersList></UsersList>
+  </div>
+  <div class="container">
     <div class="block" :class="{animate: animatedBlock}"></div>
     <button @click="animateBlk">Animate</button>
   </div>
   <div class="container">
 
-    <transition name="para" 
+    <transition
+    :css="false" 
     @before-enter="beforeEnter" 
     @enter="enter" 
     @after-enter="afterEnter"
@@ -37,7 +41,12 @@
 </template>  
 
 <script>
+import UsersList from './components/UsersList.vue';
+
 export default {
+  components: {
+    UsersList
+  },
   data() {
     return { 
       dialogIsVisible: false,
