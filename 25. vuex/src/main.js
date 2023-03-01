@@ -5,6 +5,8 @@ import App from './App.vue';
 
 // a seperate module for the counter stuffs
 const counterModule = {
+    // namespacing module, to detatch the whole module and to avoid any name clashes
+    namespaced: true,
     state() {
         return {
             counter: 0

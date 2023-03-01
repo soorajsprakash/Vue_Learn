@@ -13,7 +13,7 @@ export default {
         // }
         // ...mapActions(['increment', 'increaseBy']),
         // other way for the same, but set custom name for each.
-        ...mapActions({
+        ...mapActions('numbers', {
             inc: 'increaseBy',
             icrm: 'increment'
         })

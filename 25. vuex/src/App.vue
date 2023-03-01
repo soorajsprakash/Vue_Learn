@@ -36,7 +36,7 @@ export default {
     addOne() {
       // this.$store.commit('increaseBy', { value: 10 })
       this.$store.dispatch({
-        type: 'increaseBy', // name of the mutation
+        type: 'numbers/increaseBy', // name of the mutation
         value: 10
       })
     }
