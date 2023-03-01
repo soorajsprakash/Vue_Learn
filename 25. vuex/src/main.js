@@ -12,6 +12,9 @@ const store = createStore({
     mutations: {
         increment(state) {
             state.counter = state.counter + 1
+        },
+        increaseBy(state, payload) {
+            state.counter = state.counter + payload.value
         }
     }
 })
