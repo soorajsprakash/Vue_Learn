@@ -7,8 +7,10 @@
 - Intro to Vue.
 - Rebuilding a simple js app with Vue.
 
-### Section 2: The basics
+### Section 2: The basics & Core concepts
 
 - Interpolation
 - Data binding with v-bind (:)
-- Data properties & methods
+- Data object & methods
+- Events & methods
+- Event modifiers
