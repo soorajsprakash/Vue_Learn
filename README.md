@@ -14,3 +14,7 @@
 - Data object & methods
 - Events & methods
 - Event modifiers
+- 2 way binding
+- Computed properties
+- Watchers
+- Dynamic styling using inline & array syntax
