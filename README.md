@@ -18,3 +18,11 @@
 - Computed properties
 - Watchers
 - Dynamic styling using inline & array syntax
+
+### Section 3: Conditional Rendering
+
+- v-if, v-else, v-else-if
+- v-show
+- v-for
+- Removing list items
+- Lists & Keys
