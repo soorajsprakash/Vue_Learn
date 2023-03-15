@@ -39,3 +39,9 @@
 - v-for
 - Removing list items
 - Lists & Keys
+
+### Section 4: Vue - Behind the scenes
+
+- Understanding templates
+- Refs ($refs)
+- Vue app lifecycle
