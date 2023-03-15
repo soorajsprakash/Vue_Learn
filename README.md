@@ -1,5 +1,18 @@
 # Vue - The Complete Guide (incl. Router & Composition API)
 
+## Projects
+<br>
+
+- Project 1 : The Monster-slayer game
+
+<p align="center">
+  <img width="460" height="300" src="./project1.gif">
+</p>
+
+--- 
+
+<br>
+
 ## Topics covered
 
 ### Section 1: Intro
