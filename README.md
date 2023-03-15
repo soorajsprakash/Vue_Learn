@@ -45,3 +45,7 @@
 - Understanding templates
 - Refs ($refs)
 - Vue app lifecycle
+
+### Section 5: Intro to Components
+
+- Components - Multiple Vue Apps vs Multiple Components
