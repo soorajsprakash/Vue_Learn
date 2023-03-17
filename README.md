@@ -50,3 +50,10 @@
 
 - Components - Multiple Vue Apps vs Multiple Components
 - Starting with vue-cli
+
+### Section 6: Component Communication
+
+- Props (Parent -> Child communication) & its validation
+- Emiting custom events (Child -> Parent communication) & its validation
+- Fallthrough & binding props
+- Provide + Inject
