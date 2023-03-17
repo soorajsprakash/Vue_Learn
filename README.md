@@ -49,3 +49,4 @@
 ### Section 5: Intro to Components
 
 - Components - Multiple Vue Apps vs Multiple Components
+- Starting with vue-cli
